@@ -1,0 +1,5 @@
+libplist 3cfe22475244cc1e924b6fd189234c130d6c5914
+uxplay 05b0275cb1b726592700e47a6e0307544b3d3a52 (FDH2/UxPlay, lib/ only, crypto.c replaced by port/crypto_port.c)
+mbedtls v3.6.2 (subset)
+monocypher 4.0.2
+ffmpeg n9.0.1 (git tag ref 501bb49457b9dfb25d6a208832e0a6e6cd53108d, GitHub tarball FFmpeg-n9.0.1; AAC decoder subset, unmodified files; list in port/ffmpeg/SOURCES, config in port/ffmpeg)
