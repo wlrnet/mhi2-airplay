@@ -537,7 +537,8 @@ int main(int argc, char **argv)
     dnssd_set_airplay_features(dnssd, 0, 0);    /* no HLS video */
     dnssd_set_airplay_features(dnssd, 4, 0);
     dnssd_set_airplay_features(dnssd, 42, 0);   /* no H.265: the hardware path is H.264 */
-    dnssd_set_airplay_features(dnssd, 27, 0);   /* AirPlay 2 client pairing (UxPlay default) */
+    /* bit 27 ("supports legacy pairing") stays ON (UxPlay default): without it iOS 18 skips
+     * pair-setup/pair-verify, completes SETUP/RECORD and then never sets up the mirror stream. */
     raop_set_dnssd(raop, dnssd);
     if ((err = dnssd_register_raop(dnssd, port)) != 0) aplog("register _raop failed (%d)", err);
     if ((err = dnssd_register_airplay(dnssd, port)) != 0) aplog("register _airplay failed (%d)", err);
